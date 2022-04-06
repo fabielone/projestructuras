@@ -1,15 +1,5 @@
-#include "./struct.h"
 
 
-
-
-struct ArrAlumno buscar(struct ArrAlumno *arrDatos){
-       
-
-
-
-    return *arrDatos;
-
-
-
+void buscar(Alumno arrDatos[], short i)
+{
 }

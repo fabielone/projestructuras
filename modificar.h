@@ -1,15 +1,5 @@
-#include "./struct.h"
 
 
-
-
-struct ArrAlumno modificar(struct ArrAlumno *arrDatos){
-       
-
-
-
-    return *arrDatos;
-
-
-
+void modificar(Alumno arrDatos[])
+{
 }

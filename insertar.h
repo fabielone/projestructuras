@@ -1,15 +1,7 @@
-#include "./struct.h"
+#include <string.h>
 
+void insertar(Alumno arrData[], short i)
+{
 
-
-
-struct ArrAlumno insertar(struct ArrAlumno *arrData){
-       
-   
-
-
-    return *arrData;
-
-
-
-}
+    strcpy(arrData[0].Matricula, "1010");
+};

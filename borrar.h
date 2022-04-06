@@ -1,15 +1,5 @@
-#include "./struct.h"
 
 
-
-
-struct ArrAlumno borrar(struct ArrAlumno *arrDatos){
-       
-
-
-
-    return *arrDatos;
-
-
-
+void borrar(Alumno arrDatos[], short i)
+{
 }

@@ -8,17 +8,11 @@ typedef struct Alumno
     char ApellidoM[50];
     int Edad;
     char Carrera[10];
-    short status; 
-    
-
+    short status;
 } Alumno;
 
-typedef struct ArrAlumno{
+typedef struct ArrAlumno
+{
 
-
-    struct Alumno arrDatos1[100]
-    
-
-
+    Alumno arrDatos1[100];
 } ArrAlumno;
-

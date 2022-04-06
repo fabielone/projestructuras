@@ -14,11 +14,10 @@ typedef struct Alumno
     char ApellidoM[50];
     int Edad;
     char Carrera[10];
-    
 
 } Alumno;
 
-void Arrange(struct Alumno Datos[], short);
+void Arrange(Alumno Datos[], short);
 
 void Visualizar(struct Alumno *);
 
@@ -59,7 +58,7 @@ void main() /* Rellenar y visualizar V */
     Arrange(arrDatos, num);
 }
 
-void Visualizar(struct Alumno *Datos)
+void Visualizar(Alumno Datos[])
 {
     // system("clear");
 
@@ -75,7 +74,7 @@ void Visualizar(struct Alumno *Datos)
     }
 }
 
-void Arrange(struct Alumno Datos[20], short n)
+void Arrange(Alumno Datos[], short n)
 {
     int c, d;
     struct Alumno swap;
@@ -95,7 +94,6 @@ void Arrange(struct Alumno Datos[20], short n)
                 if (strcmp(Datos[d].Matricula, Datos[d + 1].Matricula) > 0)
                 {
 
-                    
                     swap = Datos[d];
                     Datos[d] = Datos[d + 1];
                     Datos[d + 1] = swap;
