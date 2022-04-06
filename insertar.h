@@ -1,5 +1,6 @@
 #include <string.h>
 
+
 void insertar(Alumno arrData[], short i)
 {
 

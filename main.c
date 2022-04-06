@@ -2,16 +2,18 @@
 
 #include "./struct.h"
 #include "./listar.h"
+#include "./interfaz.h"
 #include "./menu.h"
 #include "./insertar.h"
 #include "./borrar.h"
 #include "./modificar.h"
 #include "./ordenar.h"
 #include "./buscar.h"
-#include "./libreria.h"
+
 
 void main()
 {
+    interfaz();
 
     // struct ArrAlumno arrDatos;
 
@@ -24,20 +26,21 @@ void main()
 
     selecion = menu();
 
-    listar(arrDatos, 1);
-
+    // listar(arrDatos, 1);
+   int num;
     while (selecion != 0)
     {
         switch (selecion)
         {
         case 1:
             /* funcion de insertar
-
+            
 
             */
+            
             insertar(arrDatos, 1);
-            listar(arrDatos, 1);
-
+            //listar(arrDatos, 1);
+            scanf("%d",&num);
             break;
 
         case 2:

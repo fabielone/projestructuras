@@ -1,7 +1,9 @@
 {
   "files.associations": {
     "*.c": "c",
-    "insertar.h": "c"
+    "insertar.h": "c",
+    "ordenar.h": "c",
+    "modificar.h": "c"
   },
   "C_Cpp.errorSquiggles": "Enabled",
 }
