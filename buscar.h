@@ -2,5 +2,5 @@
 
 void buscar(Alumno arrDatos[], short i)
 {
-    PonTextoCentradoPantalla(2, "buscar");
+    PonTextoCentradoPantalla(2, "biuscar");
 }
