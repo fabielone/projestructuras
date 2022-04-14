@@ -10,7 +10,6 @@
 #include "./ordenar.h"
 #include "./buscar.h"
 
-
 void main()
 {
     interfaz();
@@ -18,6 +17,8 @@ void main()
     // struct ArrAlumno arrDatos;
 
     Alumno arrDatos[100];
+
+    // selecion cual opcion, numtablas numero de estudiantes.
 
     short selecion, numtablas = 0;
 
@@ -27,20 +28,20 @@ void main()
     selecion = menu();
 
     // listar(arrDatos, 1);
-   int num;
+    int num;
     while (selecion != 0)
     {
         switch (selecion)
         {
         case 1:
             /* funcion de insertar
-            
+
 
             */
-            
+
             insertar(arrDatos, 1);
-            //listar(arrDatos, 1);
-            scanf("%d",&num);
+            // listar(arrDatos, 1);
+            scanf("%d", &num);
             break;
 
         case 2:
