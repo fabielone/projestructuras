@@ -1,5 +1,5 @@
 // Archivo Principal
-
+#include "./getch.h"
 #include "./struct.h"
 #include "./listar.h"
 #include "./interfaz.h"
@@ -9,6 +9,8 @@
 #include "./modificar.h"
 #include "./ordenar.h"
 #include "./buscar.h"
+#include "./salida.h"
+
 
 void main()
 {
@@ -29,11 +31,11 @@ void main()
 
     // listar(arrDatos, 1);
     int num;
-    while (selecion != 0)
+    while (selecion != 48)
     {
         switch (selecion)
         {
-        case 1:
+        case 49:
             /* funcion de insertar
 
 
@@ -44,43 +46,44 @@ void main()
             scanf("%d", &num);
             break;
 
-        case 2:
+        case 50:
             /* funcion de borrar */
             borrar(arrDatos, 1);
             listar(arrDatos, 1);
             break;
 
-        case 3:
+        case 51:
             /* funcion de modificar */
             modificar(arrDatos);
             listar(arrDatos, 1);
             break;
 
-        case 4:
+        case 52:
             /* funcion de ordenar */
             ordenar(arrDatos);
             listar(arrDatos, 1);
             break;
 
-        case 5:
+        case 54:
             /* funcion de listar */
-            listar(arrDatos, 1);
             listar(arrDatos, 1);
             break;
 
-        case 6:
+        case 53:
             /* funcion de buscar */
             buscar(arrDatos, 1);
-            listar(arrDatos, 1);
+            
             break;
 
         default:
             break;
         }
 
-        // selecion=menu();
-        selecion = 0;
+         selecion=menu();
+        
+
     }
 
-    // funcion de salida
+    salida();
+    
 }

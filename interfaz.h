@@ -12,7 +12,7 @@ void interfaz()
 	ColorTexto(33);
 	PonTextoCentradoPantalla(2, "Sheets");
 
-	PonTextoCentradoPantallaDELAY(20, "[MENSAJES]");
+	PonTextoCentradoPantalla(20, "[MENSAJES]");
 	// El cuando del menu de la primera interfaz
 	// Recuadro(24, 7, 56, 15, 35);
 }

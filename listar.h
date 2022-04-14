@@ -3,7 +3,8 @@
 
 void listar(Alumno arrDatost[], short length)
 {
-    // system("clear");
+    PonTextoCentradoPantalla(2, "listar");
+    
 
     for (int i = 0; i < 1; i++)
     {

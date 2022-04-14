@@ -142,6 +142,39 @@ void LineaHorizontal(short c1, short c2, short r, short tipo)
     gotoxy(c, r);
 
     printf("\u2550\n");
+    
+  }
+
+  gotoxy(c1, r);
+  printf("\u2551");
+  gotoxy(c2, r);
+  printf("\u2551");
+
+  for (c = c1 + 1; c < c2; c++)
+  {
+    gotoxy(c, r);
+
+    printf("\u2550\n");
+    
+  }
+}
+
+
+
+void LineaHorizontalAnimado(short c1, short c2, short r, short tipo)
+{
+  short c;
+  ColorTexto(tipo);
+  gotoxy(c1, r);
+  printf("\u2551");
+  gotoxy(c2, r);
+  printf("\u2551");
+
+  for (c = c1 + 1; c < c2; c++)
+  {
+    gotoxy(c, r);
+
+    printf("\u2550\n");
     delay(10);
   }
 
@@ -159,6 +192,7 @@ void LineaHorizontal(short c1, short c2, short r, short tipo)
   }
 }
 
+
 void LineaVertical(short r1, short r2, short c, short tipo)
 {
   short r;
@@ -174,6 +208,46 @@ void LineaVertical(short r1, short r2, short c, short tipo)
 }
 
 void Recuadro(short c1, short r1, short c2, short r2, short tipo)
+{
+  short c, r, ctwo = c2, rtwo = r2;
+  ColorTexto(tipo);
+
+  gotoxy(c1, r1);
+  printf("\u2554");
+
+  gotoxy(c2, r1);
+  printf("\u2557");
+
+  gotoxy(c1, r2);
+  printf("\u255A");
+
+  gotoxy(c2, r2);
+  printf("\u255D");
+
+  for (c = c1 + 1; c < c2; c++)
+  {
+    gotoxy(c, r1);
+
+    printf("\u2550\n");
+    gotoxy(ctwo-- - 1, r2);
+
+    printf("\u2550\n");
+    
+  }
+
+  for (r = r1 + 1; r < r2; r++)
+  {
+    gotoxy(c1, r);
+
+    printf("\u2551\n");
+    gotoxy(c2, rtwo-- - 1);
+
+    printf("\u2551\n");
+
+  }
+}
+
+void RecuadroAnimado(short c1, short r1, short c2, short r2, short tipo)
 {
   short c, r, ctwo = c2, rtwo = r2;
   ColorTexto(tipo);

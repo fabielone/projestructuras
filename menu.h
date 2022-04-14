@@ -10,13 +10,13 @@ short menu()
   RecuadroTextoCentrado(24, 7, 56, 17, 38, "[MENU]");
   //  Textos Del menu
   ColorTexto(0);
-  PonTextoCentradoPantallaDELAY(9, "Insertar-----------[1]");
-  PonTextoCentradoPantallaDELAY(10, "Borrar-------------[2]");
-  PonTextoCentradoPantallaDELAY(11, "Modificar----------[3]");
-  PonTextoCentradoPantallaDELAY(12, "Ordenar------------[4]");
-  PonTextoCentradoPantallaDELAY(13, "Buscar-------------[5]");
-  PonTextoCentradoPantallaDELAY(14, "Listar-------------[6]");
-  PonTextoCentradoPantallaDELAY(15, "Salir--------------[0]");
+  PonTextoCentradoPantalla(9, "Insertar-----------[1]");
+  PonTextoCentradoPantalla(10, "Borrar-------------[2]");
+  PonTextoCentradoPantalla(11, "Modificar----------[3]");
+  PonTextoCentradoPantalla(12, "Ordenar------------[4]");
+  PonTextoCentradoPantalla(13, "Buscar-------------[5]");
+  PonTextoCentradoPantalla(14, "Listar-------------[6]");
+  PonTextoCentradoPantalla(15, "Salir--------------[0]");
   // Escaner el numero de opcion
 
   gotoxy(48, 13);
@@ -24,11 +24,13 @@ short menu()
   do
   {
     gotoxy(48, 13);
+    opc=getch();
+    printf("%hu",opc);
 
-    if (scanf(" %hu%*c", &opc) == 1 && (opc >= 1 && opc <= 4))
+    if ((opc >= 48 && opc <= 54))
     {
 
-      clearportion(24, 7, 56, 15);
+      clearportion(24, 7, 56, 17);
       return opc;
     }
     else
@@ -36,7 +38,7 @@ short menu()
       mensajes("opcion no valida", 31);
       gotoxy(48, 13);
     }
-  } while (opc < 0 || opc > 6);
+  } while (opc < 48 || opc > 54);
   // El salto para que no se coma el cuadro el mensaje de abajo
 }
 
@@ -50,7 +52,7 @@ void clearportion(short c1, short r1, short c2, short r2)
     {
       gotoxy(i, j);
       printf(" \n");
-      delay(10);
+      
     }
   }
 }
@@ -60,6 +62,6 @@ void mensajes(char *mensaje, short clr)
 
   clearportion(2, 21, 80, 21);
   ColorTexto(clr);
-  PonTextoCentradoPantallaDELAY(21, mensaje);
+  PonTextoCentradoPantalla(21, mensaje);
   ColorTexto(0);
 }
