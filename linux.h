@@ -8,7 +8,6 @@ void gotoxy(short x, short y)
   printf("%c[%d;%df", 0x1B, y, x);
 }
 
-
 // Imprime un texto en la columna c y el renglon r  de la pantalla
 void PonTextoXY(short c, short r, char *Texto)
 {
@@ -142,7 +141,6 @@ void LineaHorizontal(short c1, short c2, short r, short tipo)
     gotoxy(c, r);
 
     printf("\u2550\n");
-    
   }
 
   gotoxy(c1, r);
@@ -155,11 +153,8 @@ void LineaHorizontal(short c1, short c2, short r, short tipo)
     gotoxy(c, r);
 
     printf("\u2550\n");
-    
   }
 }
-
-
 
 void LineaHorizontalAnimado(short c1, short c2, short r, short tipo)
 {
@@ -191,7 +186,6 @@ void LineaHorizontalAnimado(short c1, short c2, short r, short tipo)
     delay(10);
   }
 }
-
 
 void LineaVertical(short r1, short r2, short c, short tipo)
 {
@@ -232,7 +226,6 @@ void Recuadro(short c1, short r1, short c2, short r2, short tipo)
     gotoxy(ctwo-- - 1, r2);
 
     printf("\u2550\n");
-    
   }
 
   for (r = r1 + 1; r < r2; r++)
@@ -243,7 +236,6 @@ void Recuadro(short c1, short r1, short c2, short r2, short tipo)
     gotoxy(c2, rtwo-- - 1);
 
     printf("\u2551\n");
-
   }
 }
 

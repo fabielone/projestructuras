@@ -1,11 +1,11 @@
 
-void clearportion(short c1, short r1, short c2, short r2);
 void mensajes(char *mensaje, short);
 
 short menu()
 {
 
   short opc;
+  mensajes("Elija una opcion. ", 32);
 
   RecuadroTextoCentrado(24, 7, 56, 17, 38, "[MENU]");
   //  Textos Del menu
@@ -24,8 +24,8 @@ short menu()
   do
   {
     gotoxy(48, 13);
-    opc=getch();
-    printf("%hu",opc);
+    opc = getch();
+    printf("%hu", opc);
 
     if ((opc >= 48 && opc <= 54))
     {
@@ -40,21 +40,6 @@ short menu()
     }
   } while (opc < 48 || opc > 54);
   // El salto para que no se coma el cuadro el mensaje de abajo
-}
-
-void clearportion(short c1, short r1, short c2, short r2)
-{
-
-  for (int i = c1; i <= c2; i++)
-
-  {
-    for (int j = r1; j <= r2; j++)
-    {
-      gotoxy(i, j);
-      printf(" \n");
-      
-    }
-  }
 }
 
 void mensajes(char *mensaje, short clr)

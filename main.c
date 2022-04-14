@@ -11,7 +11,6 @@
 #include "./buscar.h"
 #include "./salida.h"
 
-
 void main()
 {
     interfaz();
@@ -22,7 +21,7 @@ void main()
 
     // selecion cual opcion, numtablas numero de estudiantes.
 
-    short selecion, numtablas = 0;
+    short selecion, *numtablas;
 
     // para hacer recuadro
     // funcion para mostra menu y regresar un numero
@@ -41,9 +40,9 @@ void main()
 
             */
 
-            insertar(arrDatos, 1);
+            insertar(arrDatos, &numtablas);
             // listar(arrDatos, 1);
-            scanf("%d", &num);
+
             break;
 
         case 50:
@@ -66,24 +65,21 @@ void main()
 
         case 54:
             /* funcion de listar */
-            listar(arrDatos, 1);
+            listar(arrDatos, numtablas);
             break;
 
         case 53:
             /* funcion de buscar */
             buscar(arrDatos, 1);
-            
+
             break;
 
         default:
             break;
         }
 
-         selecion=menu();
-        
-
+        selecion = menu();
     }
 
     salida();
-    
 }
