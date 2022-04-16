@@ -12,27 +12,29 @@ void insertar(Alumno arrData[], short *i)
     {
         clearportion(2, 4, 79, 19);
         gotoxy(4, 4);
-        printf("Estudiante #%hu", *i);
+
+        printf("Estudiante #:%hu", *i);
+
         gotoxy(4, 5);
         printf("Matricula:");
-        gets(arrData[*i].Matricula);
+        fgets(arrData[*i].Matricula, 25, stdin);
         gotoxy(4, 6);
         printf("Nombre:");
-        gets(arrData[*i].Nombre);
+        fgets(arrData[*i].Nombre, 25, stdin);
         gotoxy(4, 7);
         printf("Apellido Paterno:");
-        gets(arrData[*i].ApellidoP);
+        fgets(arrData[*i].ApellidoP, 25, stdin);
         gotoxy(4, 8);
         printf("Apellido Materno:");
-        gets(arrData[*i].ApellidoM);
+        fgets(arrData[*i].ApellidoM, 25, stdin);
         gotoxy(4, 9);
         printf("Edad:");
-        scanf("%d", &arrData[*i].Edad);
-        fgets(buf, 20, stdin);
+        fgets(arrData[*i].Edad, 25, stdin);
         gotoxy(4, 10);
         printf("Carrera:");
-        gets(arrData[*i].Carrera);
+        fgets(arrData[*i].Carrera, 25, stdin);
         gotoxy(4, 11);
+        strcpy(arrData[*i].Status, "1");
         *i = *i + 1;
         mensajes("Deseas agregar otro alumno? 0.NO / 1.SI. ", 32);
 

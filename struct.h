@@ -2,13 +2,14 @@
 typedef struct Alumno
 {
 
-    char Matricula[6];
+    char Matricula[25];
     char Nombre[25];
-    char ApellidoP[50];
-    char ApellidoM[50];
-    int Edad;
-    char Carrera[10];
-    short status;
+    char ApellidoP[25];
+    char ApellidoM[25];
+    char Edad[25];
+    char Carrera[25];
+    char Status[25];
+
 } Alumno;
 
 typedef struct ArrAlumno

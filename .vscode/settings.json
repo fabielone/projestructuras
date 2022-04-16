@@ -4,7 +4,9 @@
     "insertar.h": "c",
     "ordenar.h": "c",
     "modificar.h": "c",
-    "borrar.h": "c"
+    "borrar.h": "c",
+    "interfaz.h": "c",
+    "menu.h": "c"
   },
   "C_Cpp.errorSquiggles": "Enabled",
 }

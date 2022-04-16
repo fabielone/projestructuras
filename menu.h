@@ -3,6 +3,9 @@ void mensajes(char *mensaje, short);
 
 short menu()
 {
+  PonTextoCentradoPantalla(2, "                                 ");
+  PonTextoCentradoPantalla(2, "Sheets");
+  clearportion(2, 4, 79, 19);
 
   short opc;
   mensajes("Elija una opcion. ", 32);

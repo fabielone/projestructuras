@@ -4,7 +4,7 @@ void interfaz()
 {
 
 	system("clear");
-	// Este es el cuadro principal
+	//   Este es el cuadro principal
 	Recuadro(1, 1, 82, 22, 32);
 
 	LineaHorizontal(1, 82, 3, 32);

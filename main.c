@@ -1,9 +1,9 @@
 // Archivo Principal
 #include "./getch.h"
 #include "./struct.h"
-#include "./listar.h"
 #include "./interfaz.h"
 #include "./menu.h"
+#include "./listar.h"
 #include "./insertar.h"
 #include "./borrar.h"
 #include "./modificar.h"
@@ -21,7 +21,7 @@ void main()
 
     // selecion cual opcion, numtablas numero de estudiantes.
 
-    short selecion, *numtablas;
+    short selecion, numtablas;
 
     // para hacer recuadro
     // funcion para mostra menu y regresar un numero
@@ -47,30 +47,30 @@ void main()
 
         case 50:
             /* funcion de borrar */
-            borrar(arrDatos, 1);
-            listar(arrDatos, 1);
+            borrar(arrDatos, &numtablas);
+            listar(arrDatos, &numtablas);
             break;
 
         case 51:
             /* funcion de modificar */
             modificar(arrDatos);
-            listar(arrDatos, 1);
+            listar(arrDatos, &numtablas);
             break;
 
         case 52:
             /* funcion de ordenar */
-            ordenar(arrDatos);
-            listar(arrDatos, 1);
+            ordenar(arrDatos, &numtablas);
+            // listar(arrDatos, &numtablas);
             break;
 
         case 54:
             /* funcion de listar */
-            listar(arrDatos, numtablas);
+            listar(arrDatos, &numtablas);
             break;
 
         case 53:
             /* funcion de buscar */
-            buscar(arrDatos, 1);
+            buscar(arrDatos, &numtablas);
 
             break;
 
