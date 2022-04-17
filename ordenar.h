@@ -60,9 +60,9 @@ void ordenar(Alumno arrDatos[], short *length)
 
             */
 
-            for (int c = 0; c < 3 - 1; c++)
+            for (int c = 0; c < *length-1; c++)
             {
-                for (int d = 0; d < 3 - c - 1; d++)
+                for (int d = 0; d < *length - c - 1; d++)
                 {
 
                     printf(" %d", d);
@@ -81,9 +81,25 @@ void ordenar(Alumno arrDatos[], short *length)
             break;
 
         case 50:
-            /* funcion de borrar */
+        for (int c = 0; c < *length-1; c++)
+            {
+                for (int d = 0; d < *length - c - 1; d++)
+                {
 
-            // listar(arrDatos, 1);
+                    printf(" %d", d);
+                    {
+                    if (strcmp(arrDatos[d].Nombre,arrDatos[d + 1].Nombre)>0)
+
+                        swap = arrDatos[d];
+                        arrDatos[d] = arrDatos[d + 1];
+                        arrDatos[d + 1] = swap;
+                    }
+                }
+            }
+
+            listar(arrDatos, length);
+
+            break;
             break;
 
         case 51:
