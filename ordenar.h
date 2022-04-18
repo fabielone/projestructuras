@@ -100,28 +100,87 @@ void ordenar(Alumno arrDatos[], short *length)
             listar(arrDatos, length);
 
             break;
-            break;
 
         case 51:
-            /* funcion de modificar */
+         for (int c = 0; c < *length-1; c++)
+            {
+                for (int d = 0; d < *length - c - 1; d++)
+                {
 
-            // listar(arrDatos, 1);
+                    printf(" %d", d);
+                    {
+                    if (strcmp(arrDatos[d].ApellidoP,arrDatos[d + 1].ApellidoP)>0)
+
+                        swap = arrDatos[d];
+                        arrDatos[d] = arrDatos[d + 1];
+                        arrDatos[d + 1] = swap;
+                    }
+                }
+            }
+
+            listar(arrDatos, length);
+
             break;
 
         case 52:
-            /* funcion de ordenar */
+            for (int c = 0; c < *length-1; c++)
+            {
+                for (int d = 0; d < *length - c - 1; d++)
+                {
 
-            // listar(arrDatos, 1);
+                    printf(" %d", d);
+                    {
+                    if (strcmp(arrDatos[d].ApellidoM,arrDatos[d + 1].ApellidoM)>0)
+
+                        swap = arrDatos[d];
+                        arrDatos[d] = arrDatos[d + 1];
+                        arrDatos[d + 1] = swap;
+                    }
+                }
+            }
+
+            listar(arrDatos, length);
+
             break;
 
         case 54:
-            /* funcion de listar */
-            // listar(arrDatos, numtablas);
+            for (int c = 0; c < *length-1; c++)
+            {
+                for (int d = 0; d < *length - c - 1; d++)
+                {
+
+                    printf(" %d", d);
+                    if (atoi(arrDatos[d].Edad) > atoi(arrDatos[d + 1].Edad))
+                    {
+
+                        swap = arrDatos[d];
+                        arrDatos[d] = arrDatos[d + 1];
+                        arrDatos[d + 1] = swap;
+                    }
+                }
+            }
+
+            listar(arrDatos, length);
             break;
 
         case 53:
-            /* funcion de buscar */
+         for (int c = 0; c < *length-1; c++)
+            {
+                for (int d = 0; d < *length - c - 1; d++)
+                {
 
+                    printf(" %d", d);
+                    {
+                    if (strcmp(arrDatos[d].Carrera,arrDatos[d + 1].Carrera)>0)
+
+                        swap = arrDatos[d];
+                        arrDatos[d] = arrDatos[d + 1];
+                        arrDatos[d + 1] = swap;
+                    }
+                }
+            }
+            
+            listar(arrDatos, length);
             break;
 
         default:
