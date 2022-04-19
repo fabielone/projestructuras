@@ -16,13 +16,14 @@ short menuordenar()
     PonTextoCentradoPantalla(13, "Edad----------------[5]");
     PonTextoCentradoPantalla(14, "Carrera-------------[6]");
     PonTextoCentradoPantalla(15, "Salir---------------[0]");
+    PonTextoCentradoPantalla(16, "Seleccione----------[ ]");
     // Escaner el numero de opcion
 
     gotoxy(48, 13);
 
     do
     {
-        gotoxy(48, 13);
+        gotoxy(50, 16);
         opc = getch();
         printf("%hu", opc);
 
@@ -60,12 +61,11 @@ void ordenar(Alumno arrDatos[], short *length)
 
             */
 
-            for (int c = 0; c < *length-1; c++)
+            for (int c = 0; c < *length - 1; c++)
             {
                 for (int d = 0; d < *length - c - 1; d++)
                 {
 
-                    printf(" %d", d);
                     if (atoi(arrDatos[d].Matricula) > atoi(arrDatos[d + 1].Matricula))
                     {
 
@@ -81,18 +81,18 @@ void ordenar(Alumno arrDatos[], short *length)
             break;
 
         case 50:
-        for (int c = 0; c < *length-1; c++)
+            for (int c = 0; c < *length - 1; c++)
             {
                 for (int d = 0; d < *length - c - 1; d++)
                 {
 
-                    printf(" %d", d);
                     {
-                    if (strcmp(arrDatos[d].Nombre,arrDatos[d + 1].Nombre)>0)
-
-                        swap = arrDatos[d];
-                        arrDatos[d] = arrDatos[d + 1];
-                        arrDatos[d + 1] = swap;
+                        if (strcmp(arrDatos[d].Nombre, arrDatos[d + 1].Nombre) > 0)
+                        {
+                            swap = arrDatos[d];
+                            arrDatos[d] = arrDatos[d + 1];
+                            arrDatos[d + 1] = swap;
+                        }
                     }
                 }
             }
@@ -102,18 +102,18 @@ void ordenar(Alumno arrDatos[], short *length)
             break;
 
         case 51:
-         for (int c = 0; c < *length-1; c++)
+            for (int c = 0; c < *length - 1; c++)
             {
                 for (int d = 0; d < *length - c - 1; d++)
                 {
 
-                    printf(" %d", d);
                     {
-                    if (strcmp(arrDatos[d].ApellidoP,arrDatos[d + 1].ApellidoP)>0)
-
-                        swap = arrDatos[d];
-                        arrDatos[d] = arrDatos[d + 1];
-                        arrDatos[d + 1] = swap;
+                        if (strcmp(arrDatos[d].ApellidoP, arrDatos[d + 1].ApellidoP) > 0)
+                        {
+                            swap = arrDatos[d];
+                            arrDatos[d] = arrDatos[d + 1];
+                            arrDatos[d + 1] = swap;
+                        }
                     }
                 }
             }
@@ -123,18 +123,18 @@ void ordenar(Alumno arrDatos[], short *length)
             break;
 
         case 52:
-            for (int c = 0; c < *length-1; c++)
+            for (int c = 0; c < *length - 1; c++)
             {
                 for (int d = 0; d < *length - c - 1; d++)
                 {
 
-                    printf(" %d", d);
                     {
-                    if (strcmp(arrDatos[d].ApellidoM,arrDatos[d + 1].ApellidoM)>0)
-
-                        swap = arrDatos[d];
-                        arrDatos[d] = arrDatos[d + 1];
-                        arrDatos[d + 1] = swap;
+                        if (strcmp(arrDatos[d].ApellidoM, arrDatos[d + 1].ApellidoM) > 0)
+                        {
+                            swap = arrDatos[d];
+                            arrDatos[d] = arrDatos[d + 1];
+                            arrDatos[d + 1] = swap;
+                        }
                     }
                 }
             }
@@ -144,12 +144,11 @@ void ordenar(Alumno arrDatos[], short *length)
             break;
 
         case 54:
-            for (int c = 0; c < *length-1; c++)
+            for (int c = 0; c < *length - 1; c++)
             {
                 for (int d = 0; d < *length - c - 1; d++)
                 {
 
-                    printf(" %d", d);
                     if (atoi(arrDatos[d].Edad) > atoi(arrDatos[d + 1].Edad))
                     {
 
@@ -164,22 +163,22 @@ void ordenar(Alumno arrDatos[], short *length)
             break;
 
         case 53:
-         for (int c = 0; c < *length-1; c++)
+            for (int c = 0; c < *length - 1; c++)
             {
                 for (int d = 0; d < *length - c - 1; d++)
                 {
 
-                    printf(" %d", d);
                     {
-                    if (strcmp(arrDatos[d].Carrera,arrDatos[d + 1].Carrera)>0)
-
-                        swap = arrDatos[d];
-                        arrDatos[d] = arrDatos[d + 1];
-                        arrDatos[d + 1] = swap;
+                        if (strcmp(arrDatos[d].Carrera, arrDatos[d + 1].Carrera) > 0)
+                        {
+                            swap = arrDatos[d];
+                            arrDatos[d] = arrDatos[d + 1];
+                            arrDatos[d + 1] = swap;
+                        }
                     }
                 }
             }
-            
+
             listar(arrDatos, length);
             break;
 

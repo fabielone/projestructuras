@@ -5,7 +5,7 @@ void listar(Alumno arrDatost[], short *length)
 {
     PonTextoCentradoPantalla(2, "                 ");
     PonTextoCentradoPantalla(2, "listar");
-    clearportion(2, 4, 79, 19);
+    clearportion(2, 4, 81, 19);
 
     gotoxy(2, 4);
     printf(" # |");
@@ -15,7 +15,7 @@ void listar(Alumno arrDatost[], short *length)
     printf("Ape Materno | ");
     printf("Edad | ");
     printf("  Carrera    |");
-    printf("Act\n");
+    printf("Act");
 
     for (int i = 0; i < *length; i++)
     {
@@ -56,5 +56,5 @@ void listar(Alumno arrDatost[], short *length)
         mensajes("Presione 0 para salir ", 32);
         opc = getch();
     } while (opc != 48);
-    clearportion(2, 4, 79, 19);
+    clearportion(2, 4, 81, 19);
 }

@@ -5,7 +5,7 @@ short menu()
 {
   PonTextoCentradoPantalla(2, "                                 ");
   PonTextoCentradoPantalla(2, "Sheets");
-  clearportion(2, 4, 79, 19);
+  clearportion(2, 4, 81, 19);
 
   short opc;
   mensajes("Elija una opcion. ", 32);
@@ -20,13 +20,14 @@ short menu()
   PonTextoCentradoPantalla(13, "Buscar-------------[5]");
   PonTextoCentradoPantalla(14, "Listar-------------[6]");
   PonTextoCentradoPantalla(15, "Salir--------------[0]");
+  PonTextoCentradoPantalla(16, "Seleccione---------[ ]");
   // Escaner el numero de opcion
 
   gotoxy(48, 13);
 
   do
   {
-    gotoxy(48, 13);
+    gotoxy(49, 16);
     opc = getch();
     printf("%hu", opc);
 

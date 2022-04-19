@@ -36,6 +36,8 @@ void insertar(Alumno arrData[], short *i)
         gotoxy(4, 11);
         strcpy(arrData[*i].Status, "1");
         *i = *i + 1;
+
+        PonTextoCentradoPantalla(2, "listar");
         mensajes("Deseas agregar otro alumno? 0.NO / 1.SI. ", 32);
 
         opc = getch();

@@ -48,13 +48,13 @@ void main()
         case 50:
             /* funcion de borrar */
             borrar(arrDatos, &numtablas);
-            listar(arrDatos, &numtablas);
+
             break;
 
         case 51:
             /* funcion de modificar */
-            modificar(arrDatos);
-            listar(arrDatos, &numtablas);
+            modificar(arrDatos, &numtablas);
+            // listar(arrDatos, &numtablas);
             break;
 
         case 52:

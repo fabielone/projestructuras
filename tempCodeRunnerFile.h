@@ -1,55 +1,61 @@
+#include <string.h>
 
-void mensajes(char *mensaje, short);
-
-short menu()
+void insertar(Alumno arrData[], short *i)
 {
-  PonTextoCentradoPantalla(2, "                                 ");
-  PonTextoCentradoPantalla(2, "Sheets");
-  clearportion(2, 4, 79, 19);
-
-  short opc;
-  mensajes("Elija una opcion. ", 32);
-
-  RecuadroTextoCentrado(24, 7, 56, 17, 38, "[MENU]");
-  //  Textos Del menu
-  ColorTexto(0);
-  PonTextoCentradoPantalla(9, "Insertar-----------[1]");
-  PonTextoCentradoPantalla(10, "Borrar-------------[2]");
-  PonTextoCentradoPantalla(11, "Modificar----------[3]");
-  PonTextoCentradoPantalla(12, "Ordenar------------[4]");
-  PonTextoCentradoPantalla(13, "Buscar-------------[5]");
-  PonTextoCentradoPantalla(14, "Listar-------------[6]");
-  PonTextoCentradoPantalla(15, "Salir--------------[0]");
-  // Escaner el numero de opcion
-
-  gotoxy(48, 13);
-
-  do
-  {
-    gotoxy(48, 13);
-    opc = getch();
-    printf("%hu", opc);
-
-    if ((opc >= 48 && opc <= 54))
+    char buf[20];
+    PonTextoCentradoPantalla(2, "                                 ");
+    PonTextoCentradoPantalla(2, "insertar");
+    clearportion(2, 4, 79, 19);
+    // fgets(buf, 20, stdin);
+    short opc;
+    do
     {
+        clearportion(2, 4, 79, 19);
+        gotoxy(4, 4);
 
-      clearportion(24, 7, 56, 17);
-      return opc;
-    }
-    else
-    {
-      mensajes("opcion no valida", 31);
-      gotoxy(48, 13);
-    }
-  } while (opc < 48 || opc > 54);
-  // El salto para que no se coma el cuadro el mensaje de abajo
-}
+        printf("Estudiante #:%hu", *i);
 
-void mensajes(char *mensaje, short clr)
-{
+        gotoxy(4, 5);
+        printf("Matricula:");
+        fgets(arrData[*i].Matricula, 25, stdin);
+        gotoxy(4, 6);
+        printf("Nombre:");
+        fgets(arrData[*i].Nombre, 25, stdin);
+        gotoxy(4, 7);
+        printf("Apellido Paterno:");
+        fgets(arrData[*i].ApellidoP, 25, stdin);
+        gotoxy(4, 8);
+        printf("Apellido Materno:");
+        fgets(arrData[*i].ApellidoM, 25, stdin);
+        gotoxy(4, 9);
+        printf("Edad:");
+        fgets(arrData[*i].Edad, 25, stdin);
+        gotoxy(4, 10);
+        printf("Carrera:");
+        fgets(arrData[*i].Carrera, 25, stdin);
+        gotoxy(4, 11);
+        strcpy(arrData[*i].Status, "1");
+        *i = *i + 1;
+        mensajes("Deseas agregar otro alumno? 0.NO / 1.SI. ", 32);
 
-  clearportion(2, 21, 80, 21);
-  ColorTexto(clr);
-  PonTextoCentradoPantalla(21, mensaje);
-  ColorTexto(0);
-}
+        opc = getch();
+
+        if ((opc == 49 || opc == 48))
+        {
+        }
+        else
+        {
+
+            do
+            {
+
+                mensajes("opcion no valida", 31);
+                delay(500);
+                mensajes("Deseas agregar otro alumno? 0.NO / 1.SI. ", 32);
+                opc = getch();
+            } while (opc != 48 && opc != 49);
+        }
+    } while (opc != 48);
+    clearportion(2, 4, 79, 19);
+    // El salto para que no se coma el cuadro el mensaje de abajo
+};
