@@ -1,45 +1,64 @@
-#include <string.h>
 
-void insertar(Alumno arrData[], short *i)
+
+void modificar(Alumno arrDatos[], short *length)
 {
-    char buf[20];
-    PonTextoCentradoPantalla(2, "                                 ");
-    PonTextoCentradoPantalla(2, "insertar");
-    clearportion(2, 4, 79, 19);
-    // fgets(buf, 20, stdin);
     short opc;
+    PonTextoCentradoPantalla(2, "                                 ");
+    PonTextoCentradoPantalla(2, "Modificar");
+
     do
     {
+
+        struct Alumno swap;
+        char tempchar[25];
+
+        PonTextoCentradoPantalla(9, "Ingrese Matricula: ");
+        //fgets(tempchar, 25, stdin);
+        validarNumeros(tempchar,25,"none");
         clearportion(2, 4, 79, 19);
-        gotoxy(4, 4);
 
-        printf("Estudiante #:%hu", *i);
+        for (int i = 0; i < *length; i++)
+        {
+            if (strcasecmp(tempchar, arrDatos[i].Matricula) == 0)
+            {
+                gotoxy(4, 4);
 
-        gotoxy(4, 5);
-        printf("Matricula:");
-        fgets(arrData[*i].Matricula, 25, stdin);
-        gotoxy(4, 6);
-        printf("Nombre:");
-        fgets(arrData[*i].Nombre, 25, stdin);
-        gotoxy(4, 7);
-        printf("Apellido Paterno:");
-        fgets(arrData[*i].ApellidoP, 25, stdin);
-        gotoxy(4, 8);
-        printf("Apellido Materno:");
-        fgets(arrData[*i].ApellidoM, 25, stdin);
-        gotoxy(4, 9);
-        printf("Edad:");
-        fgets(arrData[*i].Edad, 25, stdin);
-        gotoxy(4, 10);
-        printf("Carrera:");
-        fgets(arrData[*i].Carrera, 25, stdin);
-        gotoxy(4, 11);
-        strcpy(arrData[*i].Status, "1");
-        *i = *i + 1;
-        mensajes("Deseas agregar otro alumno? 0.NO / 1.SI. ", 32);
+                printf("Estudiante #:%hu", i);
 
+                gotoxy(4, 5);
+                printf("Matricula:");
+                //fgets(arrDatos[i].Matricula, 25, stdin);
+                validarNumeros(arrDatos[i].Matricula,25,"none");
+                gotoxy(4, 6);
+                printf("Nombre:");
+                //fgets(arrDatos[i].Nombre, 25, stdin);
+                validarLetras(arrDatos[i].Nombre,25,"none");
+                gotoxy(4, 7);
+                printf("Apellido Paterno:");
+               // fgets(arrDatos[i].ApellidoP, 25, stdin);
+                validarLetras(arrDatos[i].ApellidoP,25,"none");
+                gotoxy(4, 8);
+                printf("Apellido Materno:");
+               // fgets(arrDatos[i].ApellidoM, 25, stdin);
+                validarLetras(arrDatos[i].ApellidoM,25,"none");
+                gotoxy(4, 9);
+                printf("Edad:");
+                fgets(arrDatos[i].Edad, 25, stdin);
+                validarNumeros(arrDatos[i].Edad,25,"none");
+                gotoxy(4, 10);
+                printf("Carrera:");
+                fgets(arrDatos[i].Carrera, 25, stdin);
+                validarLetras(arrDatos[i].Carrera,25,"none");
+                gotoxy(4, 11);
+            }
+        }
+
+        listar(arrDatos, length);
+
+        // mensajes("opcion no valida", 31);
+        // delay(500);
+        mensajes("Deseas modificar otro alumno? 0.NO / 1.SI. ", 32);
         opc = getch();
-
         if ((opc == 49 || opc == 48))
         {
         }
@@ -55,7 +74,6 @@ void insertar(Alumno arrData[], short *i)
                 opc = getch();
             } while (opc != 48 && opc != 49);
         }
-    } while (opc != 48);
-    clearportion(2, 4, 79, 19);
-    // El salto para que no se coma el cuadro el mensaje de abajo
-};
+
+    } while (opc == 49);
+}

@@ -64,6 +64,7 @@ void buscar(Alumno arrDatos[], short *length)
             // memset(tempchar, 0, 25);
             PonTextoCentradoPantalla(9, "Ingrese Matricula: ");
             fgets(tempchar, 25, stdin);
+            validarNumeros(tempchar,25,"none");
             clearportion(2, 4, 79, 19);
 
             gotoxy(2, 4);

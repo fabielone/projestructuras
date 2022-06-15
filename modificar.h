@@ -13,7 +13,8 @@ void modificar(Alumno arrDatos[], short *length)
         char tempchar[25];
 
         PonTextoCentradoPantalla(9, "Ingrese Matricula: ");
-        fgets(tempchar, 25, stdin);
+        //fgets(tempchar, 25, stdin);
+        validarNumeros(tempchar,25,"none");
         clearportion(2, 4, 79, 19);
 
         for (int i = 0; i < *length; i++)
@@ -26,22 +27,28 @@ void modificar(Alumno arrDatos[], short *length)
 
                 gotoxy(4, 5);
                 printf("Matricula:");
-                fgets(arrDatos[i].Matricula, 25, stdin);
+                //fgets(arrDatos[i].Matricula, 25, stdin);
+                validarNumeros(arrDatos[i].Matricula,25,"none");
                 gotoxy(4, 6);
                 printf("Nombre:");
-                fgets(arrDatos[i].Nombre, 25, stdin);
+                //fgets(arrDatos[i].Nombre, 25, stdin);
+                validarLetras(arrDatos[i].Nombre,25,"none");
                 gotoxy(4, 7);
                 printf("Apellido Paterno:");
-                fgets(arrDatos[i].ApellidoP, 25, stdin);
+               // fgets(arrDatos[i].ApellidoP, 25, stdin);
+                validarLetras(arrDatos[i].ApellidoP,25,"none");
                 gotoxy(4, 8);
                 printf("Apellido Materno:");
-                fgets(arrDatos[i].ApellidoM, 25, stdin);
+               // fgets(arrDatos[i].ApellidoM, 25, stdin);
+                validarLetras(arrDatos[i].ApellidoM,25,"none");
                 gotoxy(4, 9);
                 printf("Edad:");
-                fgets(arrDatos[i].Edad, 25, stdin);
+                //fgets(arrDatos[i].Edad, 25, stdin);
+                validarNumeros(arrDatos[i].Edad,25,"none");
                 gotoxy(4, 10);
                 printf("Carrera:");
-                fgets(arrDatos[i].Carrera, 25, stdin);
+                //fgets(arrDatos[i].Carrera, 25, stdin);
+                validarLetras(arrDatos[i].Carrera,25,"none");
                 gotoxy(4, 11);
             }
         }

@@ -19,6 +19,11 @@ void listar(Alumno arrDatost[], short *length)
 
     for (int i = 0; i < *length; i++)
     {
+        if(!
+        strcmp( arrDatost[i].Status,"0")){
+
+        }
+        else{
         gotoxy(2, 5 + i);
         printf(" %d \n ", i + 1);
         gotoxy(5, 5 + i);
@@ -47,7 +52,8 @@ void listar(Alumno arrDatost[], short *length)
         gotoxy(78, 5 + i);
         printf("|");
         CortarTexto(arrDatost[i].Status, 79, 5 + i, 14);
-    }
+        }
+        }
 
     short opc;
     do
